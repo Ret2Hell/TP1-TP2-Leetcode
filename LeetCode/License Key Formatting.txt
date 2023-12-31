@@ -1,0 +1,22 @@
+//https://leetcode.com/problems/license-key-formatting/description/
+class Solution {
+    public String licenseKeyFormatting(String s, int k) {
+        int count=0;
+        StringBuilder result=new StringBuilder();
+        int i=s.length()-1;
+        while (i>=0){
+            char c=s.charAt(i);
+            if (c!='-'){
+                if (count==k){
+                    result.append('-');
+                    count=0;
+                }
+                result.append(Character.toUpperCase(c));
+                count++;
+            }
+            i--;
+        }
+        String result1=result.reverse().toString();
+        return result1;
+    }
+}
